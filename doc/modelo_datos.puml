@@ -1,0 +1,23 @@
+@startuml "Modelo Entidad Relacion"
+
+Entity Movie {
+    code varcahr(10) <pk>
+    name varchar(100) <<NN>>
+    image_url varcahr(255)
+    year int(4)
+}
+
+Entity Review{
+    id int(8) <auto increment> <<PK>>
+    name varcahr(100) <<NN>>
+    email varcahr(100) <<NN>>
+    description varcahr(4000) <<NN>>
+    rating int(1) <<NN>>
+}
+
+Movie ||--o{ Review
+
+
+
+@enduml
+
