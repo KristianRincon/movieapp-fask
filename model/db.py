@@ -7,7 +7,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'coltis_movie_flask'
-app.config['MYSQL_PORT'] = 3306
+app.config['MYSQL_PORT'] = 3308
 mysql = MySQL(app)
 
 def execute(sql: str) -> Cursor:
