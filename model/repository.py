@@ -63,7 +63,7 @@ class ReviewRepository:
     def insert(self, review: Review) -> None:
         sql = f"""
                 INSERT INTO Review (name, email, description, rating, code)
-                VALUES ('{review.name}', '{review.email}', '{review.description}', {review.rating}), '{review.code}';
+                VALUES ('{review.name}', '{review.email}', '{review.description}', {review.rating}, '{review.code}');
                 """
         cursor = execute(sql)
         cursor.close()
@@ -94,14 +94,14 @@ class ReviewRepository:
                 SELECT id, name, email, description, rating, code
                 FROM Review
                 WHERE code = '{movie_code}';
-               """
+            """
         cursor = execute(sql)
         result = cursor.fetchall()
         cursor.close()
 
         response = list()
         for data in result:
-            response.append(Movie(
+            response.append(Review(
                 id = data[0],
                 name = data[1],
                 email = data[2],
